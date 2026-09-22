@@ -1,0 +1,21 @@
+name: Terraform issue
+description: Report a validation, test, or module-contract problem.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Sanitized reproduction
+      description: Exclude state, credentials, account IDs, and private resource addresses.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Terraform and provider versions
+    validations:
+      required: true

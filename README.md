@@ -1,5 +1,10 @@
 # Terraform AWS Lab
 
+[![Terraform quality](https://github.com/m4rtian/terraform-aws-lab/actions/workflows/terraform.yml/badge.svg)](https://github.com/m4rtian/terraform-aws-lab/actions/workflows/terraform.yml)
+[![Terraform 1.7](https://img.shields.io/badge/terraform-1.7-844FBA?logo=terraform&logoColor=white)](https://developer.hashicorp.com/terraform)
+[![Security: Trivy](https://img.shields.io/badge/security-Trivy-1904DA)](https://trivy.dev/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-5C4EE5.svg)](LICENSE)
+
 A portfolio-scale AWS infrastructure lab demonstrating reusable Terraform modules, environment boundaries, secure defaults, cost-free tests, and CI validation.
 
 ## Architecture
