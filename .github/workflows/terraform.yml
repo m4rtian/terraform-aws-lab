@@ -1,0 +1,34 @@
+name: Terraform quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.3
+      - run: terraform fmt -check -recursive
+      - run: terraform -chdir=environments/dev init -backend=false
+      - run: terraform -chdir=environments/dev validate
+      - run: terraform -chdir=modules/networking init -backend=false
+      - run: terraform -chdir=modules/networking test
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aquasecurity/trivy-action@0.29.0
+        with:
+          scan-type: config
+          scan-ref: .
+          exit-code: "1"
+          severity: HIGH,CRITICAL
+
