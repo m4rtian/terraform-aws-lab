@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: aquasecurity/trivy-action@57a97c7e8ca24ed7fdf06f0c3b6d403d887ee36b # v0.35.0
+      - uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: config
           scan-ref: .
