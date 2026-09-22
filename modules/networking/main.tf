@@ -25,7 +25,7 @@ resource "aws_subnet" "this" {
 
   availability_zone       = each.value.availability_zone
   cidr_block              = each.value.cidr_block
-  map_public_ip_on_launch = each.value.public
+  map_public_ip_on_launch = false
   vpc_id                  = aws_vpc.this.id
 
   tags = merge(local.common_tags, {
@@ -55,4 +55,3 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public[0].id
   subnet_id      = aws_subnet.this[each.key].id
 }
-

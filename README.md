@@ -56,6 +56,7 @@ Apply only the reviewed `tfplan` artifact with explicit approval. Never commit s
 ## Security choices
 
 - Dedicated VPC rather than the default VPC
+- No automatic public IP assignment; individual workloads must opt in explicitly
 - Stable `for_each` subnet identities to reduce replacement churn
 - DynamoDB encryption and point-in-time recovery
 - Least-privilege Lambda access scoped to one table
@@ -73,4 +74,3 @@ This repository does not mutate state or deploy resources. For an adapted deploy
 ## License
 
 MIT
-
